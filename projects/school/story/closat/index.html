@@ -61,19 +61,18 @@
 
         <section class="project-detail-card">
 
-            <!-- LEFT SIDE: PROJECT INFO -->
-
             <div class="project-info">
 
                 <p class="project-type">
-                    Course Name · Project Type
+                    Experimental Storytelling · Course Project
                 </p>
 
-                <h1>Project Title</h1>
+                <h1>CLOSAT</h1>
 
                 <p class="project-brief">
-                    A short explanation of what the project is, what the goal was,
-                    and what I contributed to it.
+                    Write a short description of the project here.
+                    Explain what the project was, its goal, and what
+                    you personally worked on.
                 </p>
 
 
@@ -81,12 +80,19 @@
 
                     <div>
                         <h2>Role</h2>
-                        <p>Gameplay Programming / Technical Design</p>
+
+                        <p>
+                            Your role here
+                        </p>
                     </div>
+
 
                     <div>
                         <h2>Tech Used</h2>
-                        <p>Unreal Engine · C++ · Blueprints · Blender</p>
+
+                        <p>
+                            Adobe Illustrator · Photoshop · etc.
+                        </p>
                     </div>
 
                 </div>
@@ -94,40 +100,51 @@
             </div>
 
 
-            <!-- RIGHT SIDE: IMAGE GALLERY -->
-
-            <div class="project-gallery">
+            <div class="project-gallery" data-gallery data-autoplay="true" data-interval="5000" data-images='[
+            {
+                "src": "../../../../images/school/story/closat/image1.jpg",
+                "alt": "Description of image one",
+                "caption": "Optional caption for image one"
+            },
+            {
+                "src": "../../../../images/school/story/closat/image2.jpg",
+                "alt": "Description of image two",
+                "caption": "Optional caption for image two"
+            },
+            {
+                "src": "../../../../images/school/story/closat/image3.jpg",
+                "alt": "Description of image three",
+                "caption": "Optional caption for image three"
+            }
+        ]'>
 
                 <div class="gallery-viewer">
 
-                    <img id="galleryImage" src="../../../images/project-name/image1.jpg" alt="Project screenshot">
+                    <img class="gallery-image" src="" alt="">
+
 
                     <button class="gallery-button previous-button" type="button" aria-label="Previous image">
                         ←
                     </button>
 
+
                     <button class="gallery-button next-button" type="button" aria-label="Next image">
                         →
                     </button>
 
-                    <button class="fullscreen-button" type="button" aria-label="View fullscreen">
+
+                    <button class="fullscreen-button" type="button" aria-label="Toggle fullscreen">
                         ⛶
                     </button>
 
                 </div>
 
 
-                <div class="gallery-dots">
+                <p class="gallery-caption" hidden>
+                </p>
 
-                    <button class="gallery-dot active" type="button" aria-label="View image 1">
-                    </button>
 
-                    <button class="gallery-dot" type="button" aria-label="View image 2">
-                    </button>
-
-                    <button class="gallery-dot" type="button" aria-label="View image 3">
-                    </button>
-
+                <div class="gallery-dots" aria-label="Gallery navigation">
                 </div>
 
             </div>
@@ -171,8 +188,8 @@
     <footer class="site-footer">
 
         <p>
-            © 2026 Connor Van Brocklin.
-            Built with HTML and CSS.
+            © <span data-current-year></span>
+            Connor Van Brocklin. Built with HTML, CSS, and JavaScript.
         </p>
 
         <a href="#">
@@ -181,6 +198,8 @@
 
     </footer>
 
+    <script src="../../../../script.js"></script>
+    <script src="../../../../gallery.js"></script>
 
 </body>
 
