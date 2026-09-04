@@ -637,6 +637,11 @@ main {
 }
 
 /* Responsive */
+@media (max-width: 768px) {
+    .project-detail-card {
+        grid-template-columns: 1fr;
+    }
+}
 
 @media (max-width: 850px) {
     .hero {
@@ -717,4 +722,345 @@ main {
         width: min(100% - 1.5rem, 1100px);
         flex-direction: column;
     }
+}
+
+/* ========================================
+   PROJECT DETAIL LAYOUT
+======================================== */
+
+.project-detail-card {
+    max-width: 1200px;
+    margin: 4rem auto 0;
+    padding: 2rem;
+
+    background: var(--surface, #111827);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 1.25rem;
+}
+
+.project-heading {
+    margin-bottom: 1.5rem;
+}
+
+.project-heading h1 {
+    margin: 0.25rem 0 0;
+
+    font-size: clamp(2.6rem, 6vw, 4.5rem);
+    line-height: 1;
+    letter-spacing: -0.045em;
+}
+
+
+/* ========================================
+   PROJECT GALLERY
+======================================== */
+
+.project-gallery {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto 2.75rem;
+    min-width: 0;
+}
+
+.gallery-viewer {
+    position: relative;
+
+    width: 100%;
+    aspect-ratio: 16 / 9;
+
+    overflow: hidden;
+
+    background: #000;
+    border-radius: 1rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.gallery-image {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    display: block;
+}
+
+
+/* ========================================
+   PROJECT INFO
+======================================== */
+
+.project-info {
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+.project-brief {
+    margin: 0 0 1.35rem;
+
+    color: var(--text-dark);
+    font-size: 1.05rem;
+    line-height: 1.75;
+}
+
+.project-brief:last-of-type {
+    margin-bottom: 2.25rem;
+}
+
+.project-meta {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+
+    padding-top: 1.5rem;
+
+    border-top: 1px solid var(--border);
+}
+
+.project-meta h2 {
+    margin: 0 0 0.35rem;
+
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.project-meta p {
+    margin: 0;
+
+    color: var(--text-medium);
+    line-height: 1.6;
+}
+
+
+/* ========================================
+   GALLERY ARROWS
+======================================== */
+
+.gallery-button {
+    position: absolute;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    width: 2.75rem;
+    height: 2.75rem;
+
+    border: none;
+    border-radius: 50%;
+
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+
+    font-size: 1.4rem;
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.gallery-button:hover {
+    background: rgba(0, 0, 0, 0.85);
+}
+
+.previous-button {
+    left: 1rem;
+}
+
+.next-button {
+    right: 1rem;
+}
+
+
+/* ========================================
+   FULLSCREEN BUTTON
+======================================== */
+
+.fullscreen-button {
+    position: absolute;
+
+    right: 1rem;
+    bottom: 1rem;
+
+    width: 2.75rem;
+    height: 2.75rem;
+
+    border: none;
+    border-radius: 0.65rem;
+
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+
+    font-size: 1.25rem;
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: background 0.2s ease;
+}
+
+.fullscreen-button:hover {
+    background: rgba(0, 0, 0, 0.85);
+}
+
+
+/* ========================================
+   GALLERY DOTS
+======================================== */
+
+.gallery-dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 0.55rem;
+
+    margin-top: 1rem;
+}
+
+.gallery-dot {
+    width: 0.65rem;
+    height: 0.65rem;
+
+    padding: 0;
+
+    border: none;
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.3);
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease;
+}
+
+.gallery-dot:hover {
+    transform: scale(1.2);
+}
+
+.gallery-dot.active {
+    background: var(--accent, #43b581);
+    transform: scale(1.2);
+}
+
+
+/* ========================================
+   IMAGE CAPTION
+======================================== */
+
+.gallery-caption {
+    margin: 0.75rem 0 0;
+
+    color: var(--text-medium);
+    text-align: center;
+
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+
+/* ========================================
+   FULLSCREEN VIEW
+======================================== */
+
+.gallery-viewer:fullscreen {
+    width: 100vw;
+    height: 100vh;
+
+    border-radius: 0;
+
+    background: #000;
+}
+
+.gallery-viewer:fullscreen .gallery-image {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+}
+
+.gallery-viewer:fullscreen .gallery-button {
+    width: 3.5rem;
+    height: 3.5rem;
+
+    font-size: 1.8rem;
+}
+
+.gallery-viewer:fullscreen .fullscreen-button {
+    width: 3.5rem;
+    height: 3.5rem;
+
+    font-size: 1.5rem;
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 768px) {
+
+    .project-detail-card {
+        margin-top: 2rem;
+        padding: 1.25rem;
+    }
+
+    .project-heading {
+        margin-bottom: 1.25rem;
+    }
+
+    .project-gallery {
+        margin-bottom: 2rem;
+    }
+
+    .gallery-viewer {
+        aspect-ratio: 4 / 3;
+    }
+
+    .project-brief {
+        font-size: 1rem;
+        line-height: 1.7;
+    }
+
+    .project-meta {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .gallery-button {
+        width: 2.4rem;
+        height: 2.4rem;
+
+        font-size: 1.15rem;
+    }
+
+    .previous-button {
+        left: 0.65rem;
+    }
+
+    .next-button {
+        right: 0.65rem;
+    }
+
+    .fullscreen-button {
+        right: 0.65rem;
+        bottom: 0.65rem;
+
+        width: 2.4rem;
+        height: 2.4rem;
+    }
+
 }
