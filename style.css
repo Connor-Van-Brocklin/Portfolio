@@ -729,13 +729,8 @@ main {
 ======================================== */
 
 .project-detail-card {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
-    gap: 2rem;
-
     max-width: 1200px;
-    margin: 0 auto;
-
+    margin: 4rem auto 0;
     padding: 2rem;
 
     background: var(--surface, #111827);
@@ -743,43 +738,16 @@ main {
     border-radius: 1.25rem;
 }
 
-
-/* ========================================
-   PROJECT INFO
-======================================== */
-
-.project-info {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+.project-heading {
+    margin-bottom: 1.5rem;
 }
 
-.project-info h1 {
-    margin-top: 0.25rem;
-    margin-bottom: 1rem;
-}
+.project-heading h1 {
+    margin: 0.25rem 0 0;
 
-.project-brief {
-    line-height: 1.7;
-    margin-bottom: 2rem;
-}
-
-.project-meta {
-    display: grid;
-    gap: 1.5rem;
-}
-
-.project-meta h2 {
-    font-size: 0.95rem;
-    margin-bottom: 0.35rem;
-
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-}
-
-.project-meta p {
-    margin: 0;
-    line-height: 1.6;
+    font-size: clamp(2.6rem, 6vw, 4.5rem);
+    line-height: 1;
+    letter-spacing: -0.045em;
 }
 
 
@@ -788,6 +756,9 @@ main {
 ======================================== */
 
 .project-gallery {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto 2.75rem;
     min-width: 0;
 }
 
@@ -795,7 +766,7 @@ main {
     position: relative;
 
     width: 100%;
-    aspect-ratio: 16 / 10;
+    aspect-ratio: 16 / 9;
 
     overflow: hidden;
 
@@ -814,6 +785,53 @@ main {
     object-fit: contain;
 
     display: block;
+}
+
+
+/* ========================================
+   PROJECT INFO
+======================================== */
+
+.project-info {
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+.project-brief {
+    margin: 0 0 1.35rem;
+
+    color: var(--text-dark);
+    font-size: 1.05rem;
+    line-height: 1.75;
+}
+
+.project-brief:last-of-type {
+    margin-bottom: 2.25rem;
+}
+
+.project-meta {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+
+    padding-top: 1.5rem;
+
+    border-top: 1px solid var(--border);
+}
+
+.project-meta h2 {
+    margin: 0 0 0.35rem;
+
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.project-meta p {
+    margin: 0;
+
+    color: var(--text-medium);
+    line-height: 1.6;
 }
 
 
@@ -946,12 +964,11 @@ main {
 .gallery-caption {
     margin: 0.75rem 0 0;
 
+    color: var(--text-medium);
     text-align: center;
 
     font-size: 0.9rem;
     line-height: 1.5;
-
-    opacity: 0.75;
 }
 
 
@@ -997,23 +1014,30 @@ main {
 @media (max-width: 768px) {
 
     .project-detail-card {
-        grid-template-columns: 1fr;
-
-        gap: 1.5rem;
-
+        margin-top: 2rem;
         padding: 1.25rem;
     }
 
-    .project-info {
-        order: 1;
+    .project-heading {
+        margin-bottom: 1.25rem;
     }
 
     .project-gallery {
-        order: 2;
+        margin-bottom: 2rem;
     }
 
     .gallery-viewer {
         aspect-ratio: 4 / 3;
+    }
+
+    .project-brief {
+        font-size: 1rem;
+        line-height: 1.7;
+    }
+
+    .project-meta {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
     }
 
     .gallery-button {
